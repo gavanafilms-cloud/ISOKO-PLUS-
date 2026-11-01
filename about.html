@@ -85,7 +85,7 @@ async function loadCurrentProfile(){
   }
 }
 function dashboardUrl(role){
-  return (prefix||'')+'dashboards/'+(role==='seller'?'seller.html':role==='admin'?'admin.html':'buyer.html');
+  return (prefix||'')+(role==='seller'?'seller.html':role==='admin'?'admin.html':'buyer.html');
 }
 async function requireRole(expected){
   if(!currentUser){location.replace(link('login.html?next='+encodeURIComponent(location.pathname+location.search)));return false;}
